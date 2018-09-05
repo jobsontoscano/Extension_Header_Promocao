@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <headerpromocao_options translate="label" module="headerpromocao">
+            <label>Promoções no Header</label>
+            <tab>duit</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <tarja_geral translate="label">
+                    <label>Tarja -- Geral</label>
+                    <frontend_class>text</frontend_class>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_store>1</show_in_store>
+                    <show_in_website>1</show_in_website>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <image_desk translate="label comment">
+                            <label>Tarja Desktop</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">theme</upload_dir>
+                            <base_url type="media" scope_info="1">theme</base_url>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Imagem para Desktop : 1140-L 52-A]]></comment>
+                        </image_desk>
+                        <image_mob translate="label comment">
+                            <label>Tarja Mobile</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">theme</upload_dir>
+                            <base_url type="media" scope_info="1">theme</base_url>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Imagem para Mobile : 381-L 28.8-A]]></comment>
+                        </image_mob>
+                        <background_barra translate="label">
+                            <label>Background da tarja:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <comment><![CDATA[RGB (xxx,xxx,xxx) ou REX (#111111)]]></comment>
+                        </background_barra>
+                        <url translate="label">
+                            <label>Link para tarja:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </url>
+                        <data_inicial translate="label">
+                            <label>Data de inicio:</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>Duit_HeaderPromocao_Block_Adminhtml_System_Config_Date</frontend_model>
+                            <sort_order>15</sort_order>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <show_in_default>1</show_in_default>
+                            <comment><![CDATA[Dia de Inicio da Tarja no site]]></comment>
+                        </data_inicial>
+                        <data_final translate="label">
+                            <label>Data de encerramento:</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>Duit_HeaderPromocao_Block_Adminhtml_System_Config_Date</frontend_model>
+                            <sort_order>16</sort_order>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <show_in_default>1</show_in_default>
+                            <comment><![CDATA[Data Final da Tarja no site]]></comment>
+                        </data_final>
+                    </fields>
+                </tarja_geral>
+            </groups>                
+        </headerpromocao_options>
+    </sections>
+</config>

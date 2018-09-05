@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Duit_HeaderPromocao>
+            <version>0.0.1</version>
+        </Duit_HeaderPromocao>
+    </modules>
+    <global>
+        <helpers>
+            <headerpromocao>
+                <class>Duit_HeaderPromocao_Helper</class>
+            </headerpromocao>
+        </helpers>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <headerpromocao_options>
+                                            <title>Promoções no Header</title>
+                                        </headerpromocao_options>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <!-- Inserindo A nova extensão na Barra de menu da Pagina de adm -->
+    <adminhtml>
+        <menu>
+            <duit_manufacturer>
+                <children>
+                    <headerpromocao translate="title" module="headerpromocao">
+                        <title>Tarja - Headerpromoção</title>
+                        <sort_order>10</sort_order>
+                        <action>adminhtml/system_config/edit/section/headerpromocao_options</action>
+                    </headerpromocao>
+                </children>
+            </duit_manufacturer>
+        </menu>
+    </adminhtml>
+    <!-- END - Comment -->
+</config>

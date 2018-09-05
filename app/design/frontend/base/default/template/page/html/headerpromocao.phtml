@@ -1,0 +1,60 @@
+<?php 
+$showStripe = false;
+$imageDesktopStripe = "";
+$imageMobileStripe = "";
+$urlStripe = "";
+$backgroundStripe = "";
+
+if(Mage::getStoreConfig('headerpromocao_options/tarja_geral/enabled')){
+    $currentDate = Mage::getModel('core/date')->gmtDate('d/m/Y');
+    $initialDate = Mage::getStoreConfig('headerpromocao_options/tarja_geral/data_inicial');
+    $finalDate = Mage::getStoreConfig('headerpromocao_options/tarja_geral/data_final');
+
+    $currentDate = date_create_from_format('d/m/Y', $currentDate);
+    $initialDate = date_create_from_format('d/m/Y', $initialDate);
+    $finalDate = date_create_from_format('d/m/Y', $finalDate);
+
+    if($initialDate <= $currentDate && $finalDate >= $currentDate){
+        $imageDesktopStripe = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'theme/'.Mage::getStoreConfig('headerpromocao_options/tarja_geral/image_desk');
+        $imageMobileStripe = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'theme/'.Mage::getStoreConfig('headerpromocao_options/tarja_geral/image_mob');
+        $urlStripe = Mage::getStoreConfig('headerpromocao_options/tarja_geral/url');
+        $backgroundStripe = Mage::getStoreConfig('headerpromocao_options/tarja_geral/background_barra');
+        $showStripe = true;
+    }
+}
+ ?>
+                <?php if($showStripe): ?>
+                    <div class="menu-fixed-free-shipping">                        
+                        <a href="<?php echo $urlStripe; ?>">
+                           <div class="row" style="background: <?php echo $backgroundStripe; ?>">
+                                <div class="container">
+                                    <div class="col-md-12 col-sm-12 col-lg-12 hidden-xs">
+                                        <img data-src="<?php echo $imageDesktopStripe; ?>">
+                                    </div>
+                                    <div class="col-xs-12 hidden-md hidden-sm hidden-lg">
+                                        <img data-src="<?php echo $imageMobileStripe; ?>">
+                                    </div>                           
+                                </div>
+                           </div>
+                        </a>                            
+                    </div>
+                <?php endif; ?>
+            </nav>
+        </div>                       
+    </div>
+</div>        
+</div>
+<?php if($showStripe): ?>
+    <a id="tarja-fora-do-menu" href="<?php echo $urlStripe; ?>">
+       <div class="row" style="background: <?php echo $backgroundStripe; ?>">
+            <div class="container">
+                <div class="col-md-12 col-sm-12 col-lg-12 hidden-xs">
+                    <img data-src="<?php echo $imageDesktopStripe; ?>">
+                </div>
+                <div class="col-xs-12 hidden-md hidden-sm hidden-lg">
+                    <img data-src="<?php echo $imageMobileStripe; ?>">
+                </div>                           
+           </div>
+       </div>
+    </a>
+<?php endif; ?>
