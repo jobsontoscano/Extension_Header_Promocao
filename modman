@@ -1,0 +1,3 @@
+code		app/code/local/Duit/HeaderPromocao
+frontend	app/design/frontend/base/template/page/html/headerpromocao.phtml
+HeaderPromocao.xml	app/etc/modules/Duit_HeaderPromocao.xml
